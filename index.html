@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-DO List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./output.css">
+    <link rel="icon" href="./images/favicon-32x32.png">
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+<body  class="bg-[#8ddc79] dark:bg-[#273351]">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-16 dark:bg-[#111827]">
+        
+        <div id="title" class="px-4 py-2 mt-4 flex justify-between items-center">
+            <h1 class="text-[#71c55d] font-bold text-6xl uppercase mx-auto">MY TODOS</h1>
+            <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2.5">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+        <form class="w-full max-w-2xl mx-auto px-4 py-2 my-2 ">
+            <div class="flex justify-between">
+                <input type="text" id="taskInput" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#71c55d] focus:border-[#71c55d] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#71c55d] dark:focus:border-[#71c55d]" placeholder="New Task ......" required />
+                <button id="addBtn" type="button" class="ms-3 focus:outline-none text-white bg-green-500 hover:bg-green-600  font-medium rounded-lg text-lg my p-3 w-20 dark:bg-[#71c55d] dark:hover:bg-[#5f9b50] dark:focus:ring-green-800">Add</button>
+            </div>
+            <div class="flex justify-between my-3">
+                <input type="search" id="searchInput" class="mr-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#71c55d] focus:border-[#71c55d] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#71c55d] dark:focus:border-[#71c55d]" placeholder="Search..." required />
+               
+                <select id="mySelect" class="ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#71c55d] focus:border-[#71c55d] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#71c55d] dark:focus:border-[#71c55d]">
+                    <option  selected>All</option>
+                    <option value="Completed">Completed</option>
+                    <option value="UnCompleted">Un Completed</option>
+                  </select>
+            </div>
+               </form>
+
+
+        <ul id="tasks" class="divide-y divide-gray-200 px-4 mb-4">
+           
+            
+        </ul>
+    </div>
+
+
+
+
+
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+</html>
